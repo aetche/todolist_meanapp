@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Handlee|Montserrat");
+body {
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  background: #59036c;
+  background: -moz-linear-gradient(top, #59036c 0%, #0f0f85 40%, #00a69c 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #59036c 0%, #0f0f85 40%, #00a69c 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #59036c 0%, #0f0f85 40%, #00a69c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59036c', endColorstr='#00a69c',GradientType=0 );
+  /* IE6-9 */ }
+  body h1 {
+    padding: 30px;
+    font-family: 'Handlee', cursive;
+    text-transform: uppercase;
+    color: white; }
+  body .container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px; }
+    body .container .create-todo {
+      margin-bottom: 30px; }
+      body .container .create-todo .create-input {
+        display: flex; }
+        body .container .create-todo .create-input .btn {
+          margin: 0 10px 0 10px; }
+    body .container ul {
+      padding: 0 20px; }
+      body .container ul li {
+        border-bottom: #dee2e6 1px solid;
+        font-weight: 700; }
+        body .container ul li .col {
+          padding-right: 0;
+          padding-left: 0; }
+      body .container ul li:last-child {
+        border-bottom: none; }
+    body .container .todosets {
+      margin-top: 45px; }
+      body .container .todosets input {
+        margin-left: 10px; }
+
+.btn {
+  margin: 10px;
+  display: flex;
+  padding: 0.5rem .75rem; }
+  .btn ion-icon {
+    font-size: 1.2rem; }
+
+.btn-primary {
+  background: #386dc1;
+  border-color: #386dc1; }
+
+.btn-primary:hover {
+  background: #284d88;
+  border-color: #284d88; }
+
+.btn-success {
+  background: #03bfd2;
+  border-color: #03bfd2; }
+
+.btn-success:hover {
+  background: #037682;
+  border-color: #037682; }
+
+.btn-danger {
+  background: #fb0654;
+  border-color: #fb0654; }
+
+.btn-danger:hover {
+  background: #ab053a;
+  border-color: #ab053a; }
+
+.btn-secondary {
+  background: #9c4ce0;
+  border-color: #9c4ce0; }
+
+.btn-secondary:hover {
+  background: #5c2d84;
+  border-color: #5c2d84; }
+
+.btn-group .btn {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.2rem 0.4rem; }
+  .btn-group .btn ion-icon {
+    font-size: 1rem; }
+
+@media (max-width: 575.98px) {
+  body .container {
+    padding: 10px; }
+    body .container .create-todo {
+      padding: 10px; }
+      body .container .create-todo .row {
+        margin-right: 0;
+        margin-left: 0; }
+    body .container ul li .col-10 {
+      flex: auto; }
+    body .container .todosets {
+      padding: 10px;
+      display: flex;
+      flex-direction: column; }
+      body .container .todosets label {
+        display: flex;
+        justify-content: center; }
+      body .container .todosets input {
+        margin-left: 0px; }
+
+  .row {
+    flex-wrap: nowrap; }
+    .row .btn {
+      margin: 5px;
+      padding: 0.1rem; }
+      .row .btn ion-icon {
+        font-size: 1rem; }
+
+  #button-add {
+    padding: 0.1rem 0.5rem; } }
+
+/*# sourceMappingURL=style.css.map */

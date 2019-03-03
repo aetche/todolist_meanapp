@@ -1,0 +1,12 @@
+h1{
+	padding:30px;
+}
+
+.btn{
+	margin: 10px;
+}
+
+.create-todo{
+	margin-top: 10px;
+	background: red;
+}

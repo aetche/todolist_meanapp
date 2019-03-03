@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="coderlistApp" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Coderlist</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="app.js"></script>
+  <link rel="shortcut icon" href="#" />
+  <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+
+</head>
+<body>
+  <h1 class="text-center">Coderlist</h1>
+  <div class="container" ng-controller="todolistController">
+    <div>
+      <div class="form-group row create-todo">
+        <div class="col">
+          <div class="create-input">
+            <input ng-model="todo.title" ng-keypress="$event.keyCode == 13 ? createTodo() : null" type="text" class="form-control" placeholder="Enter todo">
+            <button ng-click="createTodo()" type="button" class="btn btn-primary" id="button-add"><ion-icon name="add"></ion-icon></button>
+          </div>
+          <small class="form-text text-muted">What needs to be done?</small>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <ul>
+        <li ng-repeat="todo in todos | filter:$scope.query | orderBy:sortBy" ng-style="todo.isCompleted ? {'opacity': '0.3', 'text-decoration': 'line-through'} : null" class="row justify-content-md-center align-items-center">
+
+          <div>
+            <button ng-click="completeTodo(todo._id)" type="button" class="btn btn-success">
+              <ion-icon name="square" ng-style="todo.isCompleted ? {'display' : 'none'} : {'display' : 'block'}"></ion-icon>
+              <ion-icon name="checkbox" ng-style="todo.isCompleted ? {'display' : 'block'} : {'display' : 'none'}"></ion-icon>
+            </button>
+          </div>
+
+          <div ng-hide="showInput" class="col">{{todo.title}}</div>
+          
+          <div ng-show="showInput" class="col">
+            <input ng-model="todo.title" ng-keypress="$event.keyCode == 13 ? editTodo(todo) : null">
+            <button ng-click="editTodo(todo)"><ion-icon name="checkmark"></ion-icon></button>
+          </div>
+
+          <div>
+            <button ng-click="showInput=true" type="button" class="btn btn-secondary">
+              <ion-icon name="create"></ion-icon>
+            </button>
+          </div>
+          <div>
+            <button ng-click="deleteTodo(todo._id)" type="button" class="btn btn-danger">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+
+    <div class="todosets row">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label ng-click="sortBy = 'isCompleted'" class="btn btn-outline-dark active">
+          <input type="radio" name="options" autocomplete="off" checked>
+          <ion-icon name="square-outline"></ion-icon>
+        </label>
+        <label ng-click="sortBy = '-isCompleted'" class="btn btn-outline-dark">
+          <input type="radio" name="options" autocomplete="off">
+          <ion-icon name="checkbox-outline"></ion-icon>
+        </label>
+        <label ng-click="sortBy = 'title'" class="btn btn-outline-dark">
+          <input type="radio" name="options" autocomplete="off">
+          A-Z
+        </label>
+        <label ng-click="sortBy = '-title'" class="btn btn-outline-dark">
+          <input type="radio" name="options" autocomplete="off">
+          Z-A
+        </label>
+        <label ng-click="sortBy = '-time'" class="btn btn-outline-dark">
+          <input type="radio" name="options" autocomplete="off">
+          <ion-icon name="arrow-round-down"></ion-icon>
+        </label>
+        <label ng-click="sortBy = 'time'" class="btn btn-outline-dark">
+          <input type="radio" name="options" autocomplete="off">
+          <ion-icon name="arrow-round-up"></ion-icon>
+        </label>
+      </div>
+      
+      <input ng-model="$scope.query" type="text" class="form-control col" placeholder="Search todo">
+    </div>
+
+
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
